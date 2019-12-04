@@ -1,0 +1,152 @@
+
+<!--James O’Beirne
+M4.252 - HTML y CSS 
+Segunda parte, PEC 2
+Diciembre 1, 2019-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sitio web sobre un club de fans de Isaac Asimov.">
+    <title>Fans De Asimov | Asóciate</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+
+<body>
+    
+    <header class="header">
+        <div class="headerContent">
+            <img src="./img/logoAsimovFans.png" alt="Fan Club Logo" class="logo">
+            <nav>
+                <ul class="ul" >
+                    <li class="navigation"><a href="index.html" title = "Enlace a index">inicio</a></li>
+                    <li class="navigation"><a href="leyes.html" title = "Enlace a leyes">leyes</a></li>
+                    <li class="navigation"><a href="datos.html" title = "Enlace a datos">datos</a></li>
+                    <li class="navigation activePage">asóciate</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+   
+    <main class="main">
+        <div class="mainContent">
+            <h1>Formulario para hacerte socio</h1>
+                <p>Para hacerte socio de nuestro club de fans, por favor rellena los siguientes datos y nos pondremos en contacto contigo lo antes posible para terminar el proceso de inscripción.</p>
+                <form action="/my-handling-form-page" method="post" class="formContainer">
+                        <fieldset>
+                            <legend><span class="formHeaderNumbers">1</span> Datos personals</legend>
+                                <p class="formNote"><i>Todos los campos con * son obligatorios</i></p>
+                                <div>
+                                    <label for="name" class="label">Nombre<span title="This field is mandatory">*</span></label>
+                                    <input type="text" id="name" name="user_name" class="input" required>
+                                </div>
+                                <div>
+                                    <label for="lastName" class="label">Primero apellido<span title="This field is mandatory">*</span></label>
+                                    <input type="text" id="lastName" name="last_name" class="input" required>
+                                </div>
+                                <div>
+                                    <label for="secondLastName" class="label">Segundo apellido</label>
+                                    <input type="text" id="secondLastName" name="second_last_name" class="input">
+                                </div>
+                                <div>
+                                    <label for="DNIPasaporte" class="label">DNI o Pasaporte</label>
+                                    <input type="text" id="DNIPasaporte" name="DNI_Pasaporte" placeholder="DNI o Pasaporte" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="input">
+                                </div>
+                                <div>
+                                    <label for="nacimiento" class="label">Fecha de nacimiento</label>
+                                    <input type="date" id="nacimiento" name="nacimiento" class="input">
+                                </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend><span class="formHeaderNumbers">2</span> Datos de contacto</legend>
+                                <div>
+                                    <label for="email" class="label">Correo electrónico <span title="This field is mandatory">*</span></label>
+                                    <input type="email" id="email" name="user_email" placeholder="Correo electrónico" class="input" required>
+                                </div>
+                                <div>
+                                    <label for="postCode" class="label">Código postal <span title="This field is mandatory">*</span></label>
+                                    <input type="text" id="postCode" name="post_code" minlength="5" maxlength="5" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="input" required>
+                                </div>
+                                <div>
+                                    <label for="postAddress" class="label">Dirección Postal <span title="This field is mandatory">*</span></label>
+                                    <input type="text" id="postAddress" name="post_address" class="input" required>
+                                </div>
+                                <div>
+                                    <label for="city" class="label">Población <span title="This field is mandatory">*</span></label>
+                                    <input type="text" id="city" name="city" class="input" required>
+                                </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend><span class="formHeaderNumbers">3</span> Datos de inscripción</legend>
+                                <div>
+                                    <label for="tipo-select" class="label">Tipo <span title="This field is mandatory">* </span></label>
+                                    <select name="senior/junior" id="tipo-select" required >
+                                        <option value="">None</option>
+                                        <option value="Senior">Senior</option>
+                                        <option value="Senior">Junior</option>
+                                    </select>                              
+                                </div>
+                                <div>
+                                    <label for="cuota-select" class="label">Cuota <span title="This field is mandatory">*</span></label>
+                                        <select name="general/jubilados" id="cuota-select" required>
+                                            <option value="">None</option>
+                                            <option value="general">General - 5€/mes</option>
+                                            <option value="jubilados">Jubilados - 3€/mes</option>
+                                            <option value="familiar">Familiar - 11€/mes</option>
+                                            <option value="familiar">Otros</option>
+                                        </select>
+                                </div> 
+                                <div>
+                                    <fieldset class="finalFieldset">
+                                            <legend class="finalLegend">Periodicidad</legend>
+                                                <div>
+                                                    <input type="radio" id="trimestral" value="trimestral">
+                                                    <label for="trimestral" class="radio">Trimestral</label>
+                                                
+                                                    <input type="radio" id="semestral" value="semestral">
+                                                    <label for="semestral" class="radio">Semestral</label>
+                                                
+                                                    <input type="radio" id="anual" value="anual">
+                                                    <label for="anual" class="radio">Anual</label>
+                                                </div>       
+                                    </fieldset>
+                                </div>
+
+                                <div class ="iban">
+                                    <label for="iban" class="label">IBAN</label>
+                                    <input type="text" id="iban" name="user_iban" placeholder="(si no lo sabes, dèjalo vacio)"  maxlength="12" class="input">
+                                </div>
+                            
+                                <div class="buttonContainer">
+                                    <button type="submit" class="submit">ENVIAR</button>
+                                </div>
+                        </fieldset>
+                </form>
+        </div>
+    </main>
+    
+
+    <footer class="footer">
+        <div class="footerContent">
+            <p>Trabajo realizado por James O'Beirne. Asignatura: <abbr title="HyperText Markup Language" lang="en">HTML</abbr> y <abbr title="Cascading Style Sheets" lang="en">CSS</abbr></p>
+            <p>Fotographía de <a href="https://www.instagram.com/muiseadam/?hl=en" class="link">Adam Muse</a> en <a href="https://unsplash.com/" class="link" >Unsplash</a></p>
+            <img class="footerText" src="./img/creative-commons.png" alt="Una imagen de Creative Commons" title="Atribución-NoComercial-Compartir igual 4.0 International (CC BY-NC-SA 4.0) ">
+        </div>   
+    </footer>
+</body>
+
+</html>
+
+<!--James O’Beirne
+M4.252 - HTML y CSS 
+Segunda parte, PEC 2
+Diciembre 1, 2019-->
